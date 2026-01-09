@@ -43,7 +43,6 @@ https://github.com/meshtastic/firmware.git
 
 ### Reboot meshtastic in OTA mode
 
-* How to run the program
 `meshtastic --host <ip> --reboot-ota`
 
 ElegantOTA will be available at `http://<ip>/update`
