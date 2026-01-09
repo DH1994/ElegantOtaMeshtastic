@@ -44,9 +44,6 @@
 
 #include <ElegantOTA.h>
 
-const char* ssid = "";
-const char* password = "";
-
 #if defined(ESP8266)
   ESP8266WebServer server(80);
 #elif defined(ESP32)
@@ -83,18 +80,23 @@ void onOTAEnd(bool success) {
 
 void setup(void) {
   Serial.begin(115200);
+#if defined(WIFI_SSID) && defined(WIFI_PASS)
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  Serial.println("");
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
 
+  Serial.println("");
   // Wait for connection
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
+#else
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP("ota_device", "ota1234");
+#endif
+
+
   Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
