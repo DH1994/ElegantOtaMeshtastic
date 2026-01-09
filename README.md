@@ -3,9 +3,9 @@
 Run elegantOTA next to meshtastic for OTA updates
 
 ## Prerequisites
-platformio is installed
-esptool is installed
-meshtastic client installed
+- platformio is installed
+- esptool is installed
+- meshtastic client installed
 
 ## Getting Started
 
