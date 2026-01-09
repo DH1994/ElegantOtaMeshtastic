@@ -16,8 +16,8 @@ Example: platformio run -e "heltec_v4"
 
 2. Check the partition table for your board.
 
-esp32s3 = 0x340000
-heltec_v4 = 0x650000
+- esp32s3 = 0x340000
+- heltec_v4 = 0x650000
 
 In the meshtastic repo the CSV file for the partitions can be found:
 https://github.com/meshtastic/firmware/blob/develop/variants/esp32s3/heltec_v4/platformio.ini
